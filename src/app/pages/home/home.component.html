@@ -7,13 +7,11 @@
   <app-only-list *ngSwitchCase="1"></app-only-list>
 
   <app-only-card *ngSwitchCase="2" 
-    [posts]="posts" 
-    [users]="users"
+    [posts]="postWithUser"
   ></app-only-card>
 
   <app-card-and-list *ngSwitchCase="3" 
-    [posts]="posts"
-    [users]="users"
+    [posts]="postWithUser"
   ></app-card-and-list>
 
 </div>

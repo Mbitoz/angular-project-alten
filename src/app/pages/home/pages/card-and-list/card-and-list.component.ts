@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Post } from 'src/shared/models/post.interface';
 import { User } from 'src/shared/models/user.interface';
+import { PostUser } from '../../home.component';
 
 @Component({
   selector: 'app-card-and-list',
@@ -9,16 +10,11 @@ import { User } from 'src/shared/models/user.interface';
 })
 export class CardAndListComponent implements OnInit {
 
-  @Input() posts: Array<Post>;
-  @Input() users: Array<User>;
+  @Input() posts: Array<PostUser>;
 
   constructor() { }
 
   ngOnInit() {
-  }
-
-  getUserPost(userId: number): User {
-    return this.users.find(u => u.id === userId);
   }
 
 }

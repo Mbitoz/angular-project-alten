@@ -5,9 +5,8 @@ import { forkJoin } from 'rxjs';
 import { Post } from 'src/shared/models/post.interface';
 import { User } from 'src/shared/models/user.interface';
 
-interface layoutOption {
-  name: string;
-  value: number;
+export interface PostUser extends Post {
+  userPostIt?: User;
 }
 @Component({
   selector: 'app-home',
@@ -18,9 +17,9 @@ interface layoutOption {
 
 export class HomeComponent implements OnInit {
 
-  posts: Array<Post> = [];
   users: Array<User> = [];
-  layoutOption: Array<layoutOption> = [
+  postWithUser: Array<PostUser> = [];
+  layoutOption: Array<{ name: string, value: number }> = [
     {name: 'List', value: 1},
     {name: 'Card', value: 2},
     {name: 'List | Card', value: 3}
@@ -41,16 +40,17 @@ export class HomeComponent implements OnInit {
       users$
     ]).subscribe({
       next: (values) => {
-        this.posts = values[0];
+        this.postWithUser = values[0];
         this.users = values[1];
       },
       error: (e) => console.error(e),
       complete: () => {
-        this.posts.forEach(
+        this.postWithUser.forEach(
           post => {
-            post
+            post.userPostIt = this.users.find(u => u.id === post.userId);
           }
         );
+        console.log(this.postWithUser);
         this.loadingData = false;
       }
     })

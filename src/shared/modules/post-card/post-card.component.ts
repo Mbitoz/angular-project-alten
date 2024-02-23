@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { PostUser } from 'src/app/pages/home/home.component';
 import { Post } from 'src/shared/models/post.interface';
 import { User } from 'src/shared/models/user.interface';
 
@@ -9,8 +10,7 @@ import { User } from 'src/shared/models/user.interface';
 })
 export class PostCardComponent implements OnInit {
 
-  @Input() post: Post;
-  @Input() userPost: User;
+  @Input() post: PostUser;
 
   constructor() { }
 

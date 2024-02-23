@@ -2,7 +2,6 @@
   <ng-container *ngFor="let post of posts">
     <app-post-card 
       [post]="post"
-      [userPost]="getUserPost(post.userId)"
     ></app-post-card>
   </ng-container>
 </p-scrollPanel>

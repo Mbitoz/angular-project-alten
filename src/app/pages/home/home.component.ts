@@ -50,7 +50,6 @@ export class HomeComponent implements OnInit {
             post.userPostIt = this.users.find(u => u.id === post.userId);
           }
         );
-        console.log(this.postWithUser);
         this.loadingData = false;
       }
     })

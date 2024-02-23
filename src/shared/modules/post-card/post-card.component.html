@@ -1,0 +1,13 @@
+<p-card [header]="post.title" [style]="{'text-align': 'center', 'margin': '3%'}" styleClass="p-card-shadow">
+    <ng-template pTemplate="header">
+      <p-avatar [label]="getUserInitial(userPost.name)" styleClass="mr-2" size="xlarge" [style]="{'background-color':'var(--primary-color)', 'color': '#ffffff'}"></p-avatar>
+    </ng-template>
+    <ng-template pTemplate="subtitle">
+      <p><span style="font-weight: 700;">Post pubblicato da:</span> {{userPost.name}} - alias <a href="https://www.w3schools.com">{{userPost.username}}</a></p>
+    </ng-template>
+    <p> {{ post.body }}</p>
+    <ng-template pTemplate="footer">
+        <p-button label="Save" icon="pi pi-check"></p-button>
+        <p-button label="Cancel" icon="pi pi-times" styleClass="p-button-secondary" [style]="{'margin-left': '.5em'}"></p-button>
+    </ng-template>
+</p-card>

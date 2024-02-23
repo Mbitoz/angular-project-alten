@@ -1,40 +1,19 @@
-<div class="row custom-row">
-  <div class="col-5">
-    <ng-template [ngIf]="loadingData" [ngIfElse]="defaultRender1">
-      <app-custom-skeleton></app-custom-skeleton>
-    </ng-template>
+<div class="text-center">
+  <p-selectButton [options]="layoutOption" [(ngModel)]="layoutValue" optionLabel="name"
+    optionValue="value"></p-selectButton>
+</div>
 
-    <ng-template #defaultRender1>
-      <div class="animate__animated animate__fadeIn">
-        <p-scrollPanel [style]="{width: '100%', height: '600px'}">
-          <div *ngFor="let post of posts">
-            <p>{{post.body}}</p>
-          </div>
-        </p-scrollPanel>
-      </div>
-    </ng-template>
-  </div>
-  <div class="col-1">
-    <p-divider layout="vertical">
-      <i class="pi pi-code"></i>
-    </p-divider>
-  </div>
-  <div class="col-5">
-    <ng-template [ngIf]="loadingData" [ngIfElse]="defaultRender2">
-      <app-custom-skeleton></app-custom-skeleton>
-    </ng-template>
+<div [ngSwitch]="layoutValue">
+  <app-only-list *ngSwitchCase="1"></app-only-list>
 
-    <ng-template #defaultRender2>
-      <div class="animate__animated animate__fadeIn">
-        <p-scrollPanel [style]="{width: '100%', height: '600px'}">
-          <ng-container *ngFor="let post of posts">
-            <app-post-card 
-              [post]="post"
-              [userPost]="getUserPost(post.userId)"
-            ></app-post-card>
-          </ng-container>
-        </p-scrollPanel>
-      </div>
-    </ng-template>
-  </div>
+  <app-only-card *ngSwitchCase="2" 
+    [posts]="posts" 
+    [users]="users"
+  ></app-only-card>
+
+  <app-card-and-list *ngSwitchCase="3" 
+    [posts]="posts"
+    [users]="users"
+  ></app-card-and-list>
+
 </div>

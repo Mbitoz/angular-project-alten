@@ -7,7 +7,7 @@ import { DividerModule } from 'primeng/divider';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { SkeletonModule } from 'primeng/skeleton';
 import { InputSwitchModule } from 'primeng/inputswitch';
-
+import { SelectButtonModule } from 'primeng/selectbutton';
 
 @NgModule({
   exports: [
@@ -18,7 +18,8 @@ import { InputSwitchModule } from 'primeng/inputswitch';
     DividerModule,
     ProgressSpinnerModule,
     SkeletonModule,
-    InputSwitchModule
+    InputSwitchModule,
+    SelectButtonModule
   ]
 })
 export class PrimengModule { }

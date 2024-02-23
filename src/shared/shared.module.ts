@@ -21,7 +21,8 @@ import { FormsModule } from '@angular/forms';
   exports: [
     HeaderComponent,
     FooterComponent,
-    CustomSkeletonComponent
+    CustomSkeletonComponent,
+    FormsModule
   ],
   providers: [
     ThemeService

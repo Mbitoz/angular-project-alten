@@ -6,23 +6,31 @@ import { CustomSkeletonComponent } from './components/custom-skeleton/custom-ske
 import { PrimengModule } from './primeng.module';
 import { ThemeService } from './services/theme.service';
 import { FormsModule } from '@angular/forms';
+import { ModalDetailComponent } from './components/modal-detail/modal-detail.component';
+import { BasicViewModule } from './modules/basic-view/basic-view.module';
+import { PostCardModule } from './modules/post-card-view/post-card.module';
 
 @NgModule({
   imports: [
     CommonModule,
     PrimengModule,
-    FormsModule
+    FormsModule,
+    BasicViewModule,
+    PostCardModule
   ],
   declarations: [
     HeaderComponent,
     FooterComponent,
-    CustomSkeletonComponent
+    CustomSkeletonComponent,
+    ModalDetailComponent
   ],
   exports: [
+    FormsModule,
     HeaderComponent,
     FooterComponent,
     CustomSkeletonComponent,
-    FormsModule
+    BasicViewModule,
+    PostCardModule
   ],
   providers: [
     ThemeService

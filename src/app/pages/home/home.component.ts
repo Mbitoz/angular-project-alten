@@ -54,4 +54,12 @@ export class HomeComponent implements OnInit {
       }
     })
   }
+
+
+  deletePost(postId: number): void {
+    const index = this.postWithUser.findIndex(post => post.id === postId);
+    if (index !== -1) {
+      this.postWithUser.splice(index, 1);
+    }
+  }
 }

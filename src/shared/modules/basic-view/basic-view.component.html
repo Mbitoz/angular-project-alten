@@ -1,0 +1,18 @@
+<div *ngFor="let post of posts">
+  <div class="row">
+    <div class="col-2 container-square">
+      <div class="square" (click)="openDialog(post)" pTooltip="Dettaglio Post"></div>
+    </div>
+    <div class="col-8">
+      <div>
+        <h5> {{post.title}} </h5>
+      </div>
+      <div>
+        <p>{{ post.body }} </p>
+      </div>
+    </div>
+  </div>
+  <div class="mt-2 mb-2">
+    <p-divider></p-divider>
+  </div>
+</div>

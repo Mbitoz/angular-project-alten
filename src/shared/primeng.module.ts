@@ -8,6 +8,9 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { SkeletonModule } from 'primeng/skeleton';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { SelectButtonModule } from 'primeng/selectbutton';
+import { TooltipModule } from 'primeng/tooltip';
+import { DynamicDialogModule } from 'primeng/dynamicdialog';
+
 
 @NgModule({
   exports: [
@@ -19,7 +22,9 @@ import { SelectButtonModule } from 'primeng/selectbutton';
     ProgressSpinnerModule,
     SkeletonModule,
     InputSwitchModule,
-    SelectButtonModule
+    SelectButtonModule,
+    TooltipModule,
+    DynamicDialogModule
   ]
 })
 export class PrimengModule { }

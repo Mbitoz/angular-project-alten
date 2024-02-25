@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PostCardComponent } from './post-card.component';
 import { PrimengModule } from 'src/shared/primeng.module';
+import { DialogService } from 'primeng/dynamicdialog';
 
 @NgModule({
   imports: [
@@ -9,6 +10,7 @@ import { PrimengModule } from 'src/shared/primeng.module';
     PrimengModule
   ],
   declarations: [PostCardComponent],
-  exports: [ PostCardComponent ]
+  exports: [PostCardComponent],
+  providers: [DialogService]
 })
 export class PostCardModule { }

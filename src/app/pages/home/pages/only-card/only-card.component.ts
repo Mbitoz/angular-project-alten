@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { User } from 'src/shared/models/user.interface';
 import { PostUser } from '../../home.component';
 
@@ -10,6 +10,7 @@ import { PostUser } from '../../home.component';
 export class OnlyCardComponent implements OnInit {
 
   @Input() posts: Array<PostUser>;
+  @Output() onDeletePost: EventEmitter<number> = new EventEmitter<number>();
 
   constructor() { }
 

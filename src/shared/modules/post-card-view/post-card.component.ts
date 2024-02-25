@@ -1,7 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { PostUser } from 'src/app/pages/home/home.component';
-import { Post } from 'src/shared/models/post.interface';
-import { User } from 'src/shared/models/user.interface';
 
 @Component({
   selector: 'app-post-card',
@@ -11,6 +9,8 @@ import { User } from 'src/shared/models/user.interface';
 export class PostCardComponent implements OnInit {
 
   @Input() post: PostUser;
+  @Input() canDelete: boolean = true;
+  @Output() onDeletePost: EventEmitter<number> = new EventEmitter<number>();
 
   constructor() { }
 

@@ -6,8 +6,8 @@
       <p><span style="font-weight: 700;">Post pubblicato da:</span> {{post.userPostIt.name}} - alias <a href="https://www.w3schools.com">{{post.userPostIt.username}}</a></p>
     </ng-template>
     <p> {{ post.body }}</p>
-    <ng-template pTemplate="footer">
-        <p-button label="Save" icon="pi pi-check"></p-button>
-        <p-button label="Cancel" icon="pi pi-times" styleClass="p-button-secondary" [style]="{'margin-left': '.5em'}"></p-button>
+    <ng-template pTemplate="footer" *ngIf="canDelete">
+      <button pButton pRipple type="button" icon="pi pi-trash" class="p-button-rounded p-button-warning" 
+        pTooltip="Elimina Post" (click)="onDeletePost.emit(post.id)"></button>
     </ng-template>
 </p-card>

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { PostUser } from '../../home.component';
 
 @Component({
   selector: 'app-only-list',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./only-list.component.scss']
 })
 export class OnlyListComponent implements OnInit {
+
+  @Input() posts: Array<PostUser>;
 
   constructor() { }
 

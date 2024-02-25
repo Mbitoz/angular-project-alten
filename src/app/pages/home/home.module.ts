@@ -6,7 +6,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { PostService } from './services/post.service';
 import { UserService } from './services/user.service';
 import { PrimengModule } from 'src/shared/primeng.module';
-import { PostCardModule } from 'src/shared/modules/post-card/post-card.module';
 import { SharedModule } from 'src/shared/shared.module';
 import { CardAndListComponent } from './pages/card-and-list/card-and-list.component';
 import { OnlyCardComponent } from './pages/only-card/only-card.component';
@@ -18,7 +17,6 @@ import { OnlyListComponent } from './pages/only-list/only-list.component';
     HomeRoutingModule,
     HttpClientModule,
     PrimengModule,
-    PostCardModule,
     SharedModule
   ],
   declarations: [

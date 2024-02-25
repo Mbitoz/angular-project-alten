@@ -1,14 +1,10 @@
 <div class="row custom-row">
   <div class="col-md-12 col-lg-5">
-
-      <div class="animate__animated animate__fadeIn">
-        <p-scrollPanel [style]="{width: '100%', height: '70vh'}">
-          <div *ngFor="let post of posts">
-            <p>{{post.body}}</p>
-          </div>
-        </p-scrollPanel>
-      </div>
-
+    <div class="animate__animated animate__fadeIn">
+      <p-scrollPanel [style]="{width: '100%', height: '70vh'}">
+        <app-basic-view [posts]="posts"></app-basic-view>
+      </p-scrollPanel>
+    </div>
   </div>
   <div class="col-1 custom-vertical-divider">
     <p-divider layout="vertical"></p-divider>
@@ -17,14 +13,15 @@
     <p-divider></p-divider>
   </div>
   <div class="col-md-12 col-lg-5">
-      <div class="animate__animated animate__fadeIn">
-        <p-scrollPanel [style]="{width: '100%', height: '70vh'}">
-          <ng-container *ngFor="let post of posts">
-            <app-post-card 
-              [post]="post"
-            ></app-post-card>
-          </ng-container>
-        </p-scrollPanel>
-      </div>
+    <div class="animate__animated animate__fadeIn">
+      <p-scrollPanel [style]="{width: '100%', height: '70vh'}">
+        <ng-container *ngFor="let post of posts">
+          <app-post-card 
+            [post]="post"
+            (onDeletePost)="onDeletePost.emit($event)"
+          ></app-post-card>
+        </ng-container>
+      </p-scrollPanel>
+    </div>
   </div>
 </div>

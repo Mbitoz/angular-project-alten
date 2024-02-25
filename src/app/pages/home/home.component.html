@@ -1,17 +1,18 @@
-<div class="text-center">
-  <p-selectButton [options]="layoutOption" [(ngModel)]="layoutValue" optionLabel="name"
-    optionValue="value"></p-selectButton>
-</div>
+<ng-template [ngIf]="loadingData" [ngIfElse]="defaultrender">
+  <div class="border-div p-3">
+    <app-custom-skeleton></app-custom-skeleton>
+  </div>
+</ng-template>
 
-<div [ngSwitch]="layoutValue">
-  <app-only-list *ngSwitchCase="1"></app-only-list>
+<ng-template #defaultrender>
+  <div class="text-center">
+    <p-selectButton [options]="layoutOption" [(ngModel)]="layoutValue" optionLabel="name"
+      optionValue="value"></p-selectButton>
+  </div>
 
-  <app-only-card *ngSwitchCase="2" 
-    [posts]="postWithUser"
-  ></app-only-card>
-
-  <app-card-and-list *ngSwitchCase="3" 
-    [posts]="postWithUser"
-  ></app-card-and-list>
-
-</div>
+  <div [ngSwitch]="layoutValue" class="border-div mt-3">
+    <app-only-list *ngSwitchCase="1" [posts]="postWithUser"></app-only-list>
+    <app-only-card *ngSwitchCase="2" [posts]="postWithUser" (onDeletePost)="deletePost($event)"></app-only-card>
+    <app-card-and-list *ngSwitchCase="3" [posts]="postWithUser" (onDeletePost)="deletePost($event)"></app-card-and-list>
+  </div>
+</ng-template>

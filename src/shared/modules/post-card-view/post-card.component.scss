@@ -1,0 +1,12 @@
+:host::ng-deep .p-card {
+    border: 1px solid black;
+
+    .p-card-title {
+        color: var(--primary-color);
+    }
+
+    .p-card-header {
+        padding: 3%;
+    }
+
+}

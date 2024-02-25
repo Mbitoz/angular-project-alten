@@ -5,7 +5,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { CustomSkeletonComponent } from './components/custom-skeleton/custom-skeleton.component';
 import { PrimengModule } from './primeng.module';
 import { ThemeService } from './services/theme.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalDetailComponent } from './components/modal-detail/modal-detail.component';
 import { BasicViewModule } from './modules/basic-view/basic-view.module';
 import { PostCardModule } from './modules/post-card-view/post-card.module';
@@ -15,6 +15,7 @@ import { PostCardModule } from './modules/post-card-view/post-card.module';
     CommonModule,
     PrimengModule,
     FormsModule,
+    ReactiveFormsModule,
     BasicViewModule,
     PostCardModule
   ],
@@ -26,6 +27,7 @@ import { PostCardModule } from './modules/post-card-view/post-card.module';
   ],
   exports: [
     FormsModule,
+    ReactiveFormsModule,
     HeaderComponent,
     FooterComponent,
     CustomSkeletonComponent,

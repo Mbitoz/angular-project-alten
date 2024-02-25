@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
 
   users: Array<User> = [];
   postWithUser: Array<PostUser> = [];
+  postWithUserBackup: Array<PostUser> = [];
   layoutOption: Array<{ name: string, value: number }> = [
     {name: 'List', value: 1},
     {name: 'Card', value: 2},
@@ -50,6 +51,7 @@ export class HomeComponent implements OnInit {
             post.userPostIt = this.users.find(u => u.id === post.userId);
           }
         );
+          this.postWithUserBackup = [...this.postWithUser];
         this.loadingData = false;
       }
     })
@@ -61,5 +63,9 @@ export class HomeComponent implements OnInit {
     if (index !== -1) {
       this.postWithUser.splice(index, 1);
     }
+  }
+
+  filterUser(userId: number) {
+    this.postWithUser = userId ? this.postWithUser.filter(p => p.userId === userId) : [...this.postWithUserBackup];
   }
 }

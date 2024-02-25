@@ -1,6 +1,6 @@
 <div class="bg">
   <h2 class="title-page"><i class="pi pi-prime mr-2" style="font-size: 2rem; color: white;"></i>Alten Project</h2>
 </div>
-<button (click)="switch()">
-  switch theme
-</button>
+<div class="d-flex justify-content-center mt-3">
+  <p-selectButton [options]="themeOption" [(ngModel)]="themeSelected" optionLabel="name" optionValue="value" (onChange)="switchTheme($event)"></p-selectButton>
+</div>

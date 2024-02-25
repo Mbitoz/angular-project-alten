@@ -10,7 +10,7 @@ import { InputSwitchModule } from 'primeng/inputswitch';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { TooltipModule } from 'primeng/tooltip';
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
-
+import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
   exports: [
@@ -24,7 +24,8 @@ import { DynamicDialogModule } from 'primeng/dynamicdialog';
     InputSwitchModule,
     SelectButtonModule,
     TooltipModule,
-    DynamicDialogModule
+    DynamicDialogModule,
+    DropdownModule
   ]
 })
 export class PrimengModule { }

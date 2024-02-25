@@ -7,9 +7,10 @@ import { PostService } from './services/post.service';
 import { UserService } from './services/user.service';
 import { PrimengModule } from 'src/shared/primeng.module';
 import { SharedModule } from 'src/shared/shared.module';
-import { CardAndListComponent } from './pages/card-and-list/card-and-list.component';
-import { OnlyCardComponent } from './pages/only-card/only-card.component';
-import { OnlyListComponent } from './pages/only-list/only-list.component';
+import { CardAndListComponent } from './components/card-and-list/card-and-list.component';
+import { OnlyCardComponent } from './components/only-card/only-card.component';
+import { OnlyListComponent } from './components/only-list/only-list.component';
+import { FormFilterUserComponent } from './components/form-filter-user/form-filter-user.component';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { OnlyListComponent } from './pages/only-list/only-list.component';
     HomeComponent,
     CardAndListComponent,
     OnlyCardComponent,
-    OnlyListComponent
+    OnlyListComponent,
+    FormFilterUserComponent
   ],
   providers: [
     PostService,

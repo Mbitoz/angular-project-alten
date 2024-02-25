@@ -1,0 +1,17 @@
+<div>
+  <form class="styled-form" [formGroup]="formUser" (ngSubmit)="onSubmit()">
+    <div class="text-center">
+      <label for="user">Filtra utente: </label>
+      <br>
+      <p-dropdown inputId="user" [options]="users" formControlName="user" optionLabel="name" optionValue="id"
+        placeholder="Seleziona un utente"></p-dropdown>
+    </div>
+    <div class="d-flex justify-content-center mt-3 mb-3">
+      <button pButton label="Azzera filtri" icon="pi pi-filter-slash" iconPos="left" class="p-button-outlined"
+        type="button" (click)="resetUser()"></button>
+      <button pButton label="Filtra" [disabled]="!formUser.controls['user'].value" type="submit"
+        style="margin-left: 10px;">
+      </button>
+    </div>
+  </form>
+</div>

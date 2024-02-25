@@ -8,13 +8,20 @@ import { ThemeService } from 'src/shared/services/theme.service';
 })
 export class HeaderComponent implements OnInit {
 
+  themeOption: Array<{ name: string, value: string }> = [
+    {name: 'Blue', value: 'saga-blue'},
+    {name: 'Purple', value: 'md-light-deeppurple'},
+  ];
+
+  themeSelected: string = 'saga-blue';
+
   constructor(private themeService: ThemeService) { }
 
   ngOnInit() {
   }
 
-  switch(){
-    this.themeService.switchTheme('md-light-deeppurple');
+  switchTheme(theme: any){
+    this.themeService.switchTheme(theme.value);
   }
 
 }

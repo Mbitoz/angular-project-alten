@@ -5,7 +5,11 @@
 </ng-template>
 
 <ng-template #defaultrender>
-  <div class="text-center">
+  <app-form-filter-user
+    [users]="users"
+    (onFilter)="filterUser($event)"
+  ></app-form-filter-user>
+  <div class="text-center mt-3">
     <p-selectButton [options]="layoutOption" [(ngModel)]="layoutValue" optionLabel="name"
       optionValue="value"></p-selectButton>
   </div>

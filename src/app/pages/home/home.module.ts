@@ -11,6 +11,7 @@ import { CardAndListComponent } from './components/card-and-list/card-and-list.c
 import { OnlyCardComponent } from './components/only-card/only-card.component';
 import { OnlyListComponent } from './components/only-list/only-list.component';
 import { FormFilterUserComponent } from './components/form-filter-user/form-filter-user.component';
+import { PostDetailComponent } from './pages/post-detail/post-detail.component';
 
 @NgModule({
   imports: [
@@ -25,7 +26,8 @@ import { FormFilterUserComponent } from './components/form-filter-user/form-filt
     CardAndListComponent,
     OnlyCardComponent,
     OnlyListComponent,
-    FormFilterUserComponent
+    FormFilterUserComponent,
+    PostDetailComponent
   ],
   providers: [
     PostService,

@@ -1,3 +1,21 @@
-<p>
-  post-detail works!
-</p>
+
+<div class="d-flex justify-content-center">
+  <button pButton type="button" pRipple icon="pi pi-arrow-left" class="p-button-raised" label="Torna indietro"
+    (click)="goBack()"></button>
+</div>
+<ng-template [ngIf]="loadingData" [ngIfElse]="defaultrender">
+  <div class="border-div p-3">
+    <app-custom-skeleton></app-custom-skeleton>
+  </div>
+</ng-template>
+
+<ng-template #defaultrender>
+  <div class="container">
+    <div class="animate__animated animate__fadeIn">
+      <app-post-card 
+        [post]="postWithUser"
+        [canModify]="false"
+      ></app-post-card>
+    </div>
+  </div>
+</ng-template>

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { PostUser } from 'src/app/pages/home/home.component';
 
 @Component({
@@ -9,10 +10,10 @@ import { PostUser } from 'src/app/pages/home/home.component';
 export class PostCardComponent implements OnInit {
 
   @Input() post: PostUser;
-  @Input() canDelete: boolean = true;
+  @Input() canModify: boolean = true;
   @Output() onDeletePost: EventEmitter<number> = new EventEmitter<number>();
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
@@ -21,6 +22,10 @@ export class PostCardComponent implements OnInit {
     const words = fullName.split(' ');
     const initials = words.map(word => word.charAt(0));
     return initials.join('');
+  }
+
+  goToDetail(postId){
+    this.router.navigate(['/posts', postId]);
   }
 
 }

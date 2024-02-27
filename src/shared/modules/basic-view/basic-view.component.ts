@@ -10,7 +10,7 @@ import { ModalDetailComponent } from '../../components/modal-detail/modal-detail
 })
 export class BasicViewComponent implements OnInit {
 
-  @Input() posts: PostUser;
+  @Input() posts: Array<PostUser>;
 
   constructor(public dialogService: DialogService) { }
 

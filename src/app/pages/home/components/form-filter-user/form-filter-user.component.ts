@@ -9,7 +9,7 @@ import { User } from 'src/shared/models/user.interface';
 })
 export class FormFilterUserComponent implements OnInit {
 
-  @Input() users: User;
+  @Input() users: Array<User>;
   @Output() onFilter: EventEmitter<number> = new EventEmitter<number>();
 
   formUser: FormGroup;
